@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Activity, Droplets, Sun, Bug, ScanLine, Layers, Eye, Zap, MapPin } from 'lucide-react';
 import farmerImg from '../images/farmer.jpg';
+import heroBg from '../images/hero_agri_bg.png';
 
 type ViewMode = 'visible' | 'ndvi' | 'thermal';
 
@@ -103,7 +104,7 @@ const Hero: React.FC = () => {
     <section ref={heroRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-primary-dark">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1625246333195-58197bd47d72?q=80&w=2070&auto=format&fit=crop"
+          src={heroBg}
           alt="Precision Agriculture"
           className="w-full h-full object-cover scale-105 transition-transform duration-700 ease-out"
           style={{
