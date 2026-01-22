@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from './ui/Section';
 import { ShieldCheck, CloudRain, AlertTriangle, Trees, Users, BookOpen, Scaling, Award } from 'lucide-react';
+import certificateImg from '../images/certificate.png';
 
 const About: React.FC = () => {
   return (
@@ -84,7 +85,7 @@ const About: React.FC = () => {
             {/* Certificate Image - Larger and Clearer */}
             <div className="w-full md:w-[500px] h-[350px] bg-slate-50 border-2 border-slate-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
               <img
-                src="/images/certificate.png"
+                src={certificateImg}
                 className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                 alt="SIH Certificate"
               />

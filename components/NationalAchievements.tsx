@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import Section from './ui/Section';
 import { Award, ShieldCheck, Landmark, Maximize2, X, FileText, Camera, ExternalLink } from 'lucide-react';
 
+// Import achievement images
+import certificationImg from '../images/certifaction.jpg';
+import sihImg from '../images/sih.jpg';
+import reviewImg from '../images/review.jpg';
+import exhibitionImg from '../images/exibitiopn.jpg';
+
 const NationalAchievements: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -33,10 +39,10 @@ const NationalAchievements: React.FC = () => {
   ];
 
   const galleryImages = [
-    { url: "/images/certifaction.jpg", caption: "Team receiving the Recognition Certificate at SIH Grand Finale" },
-    { url: "/images/sih.jpg", caption: "National Merit Certificate - Smart India Hackathon" },
-    { url: "/images/review.jpg", caption: "Technical presentation to the Ministry of Agriculture evaluators" },
-    { url: "/images/exibitiopn.jpg", caption: "MVP demonstration during the national exhibition" }
+    { url: certificationImg, caption: "Team receiving the Recognition Certificate at SIH Grand Finale" },
+    { url: sihImg, caption: "National Merit Certificate - Smart India Hackathon" },
+    { url: reviewImg, caption: "Technical presentation to the Ministry of Agriculture evaluators" },
+    { url: exhibitionImg, caption: "MVP demonstration during the national exhibition" }
   ];
 
   return (

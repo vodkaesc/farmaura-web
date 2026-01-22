@@ -2,6 +2,15 @@ import React from 'react';
 import Section from './ui/Section';
 import { Linkedin, Mail, Binary, Rocket, ShieldCheck } from 'lucide-react';
 
+// Import team images
+import keerthanImg from '../images/keerthan.jpeg';
+import saheemImg from '../images/s_Mohammed_Saheem.jpeg';
+import kishanImg from '../images/kishan.jpeg';
+import moeizzImg from '../images/moeizz.jpeg';
+import buranImg from '../images/buran.jpeg';
+import tharunImg from '../images/Tharun.png';
+import manasaImg from '../images/manasa_K_R.jpg';
+
 interface TeamMember {
     name: string;
     role: string;
@@ -17,7 +26,7 @@ const team: TeamMember[] = [
         name: "Keerthan Shetty",
         role: "Founder",
         responsibility: "AI/ML Engineer",
-        image: "/images/keerthan.jpeg",
+        image: keerthanImg,
         type: 'founder',
         linkedin: "https://www.linkedin.com/in/keerthanshetty334/",
         email: "mailto:keerthans334@gmail.com"
@@ -26,7 +35,7 @@ const team: TeamMember[] = [
         name: "S Mohammed saheem",
         role: "Founder",
         responsibility: "Full stack development",
-        image: "/images/s_Mohammed_Saheem.jpeg",
+        image: saheemImg,
         type: 'founder',
         linkedin: "https://www.linkedin.com/in/s-mohammed-saheem-8a6100295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         email: "mailto:saheemtab@gmail.com"
@@ -35,7 +44,7 @@ const team: TeamMember[] = [
         name: "Kishan M Naidu",
         role: "Founder",
         responsibility: "Cross-platform App developer",
-        image: "/images/kishan.jpeg",
+        image: kishanImg,
         type: 'founder',
         linkedin: "https://www.linkedin.com/in/kishan-m-naidu2123",
         email: "mailto:kishanmnaidu2005@gmail.com"
@@ -44,7 +53,7 @@ const team: TeamMember[] = [
         name: "Sheik Abdul Moiezz",
         role: "Core Team",
         responsibility: "Business and Marketing Lead",
-        image: "/images/moeizz.jpeg",
+        image: moeizzImg,
         type: 'core',
         linkedin: "https://www.linkedin.com/in/shaik-abdul-moiezz-58187b300?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         email: "mailto:shaikabdulmoiezz2005@gmail.com"
@@ -53,7 +62,7 @@ const team: TeamMember[] = [
         name: "Mirza Burhan Baig",
         role: "Core Team",
         responsibility: "Frontend development",
-        image: "/images/buran.jpeg",
+        image: buranImg,
         type: 'core',
         linkedin: "https://www.linkedin.com/in/mirza-burhan-baig-46a794295/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         email: "mirzaburhan269@gmail.com"
@@ -62,7 +71,7 @@ const team: TeamMember[] = [
         name: "Tharun H N",
         role: "Core Team",
         responsibility: "Backend developer",
-        image: "/images/Tharun.png",
+        image: tharunImg,
         type: 'core',
         linkedin: "https://www.linkedin.com/in/tharunhn",
         email: "mailto:tharun30115@gmail.com"
@@ -71,7 +80,7 @@ const team: TeamMember[] = [
         name: "Manasa KR",
         role: "Core Team",
         responsibility: "Research and Documentation",
-        image: "/images/manasa_K_R.jpg",
+        image: manasaImg,
         type: 'core',
         linkedin: "https://www.linkedin.com/in/manasa-k-r-8718402b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         email: "mailto:manasakr265@gmail.com"

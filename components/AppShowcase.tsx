@@ -2,6 +2,11 @@ import React from 'react';
 import Section from './ui/Section';
 import { Smartphone, Zap, Leaf, BarChart3 } from 'lucide-react';
 
+// Import app screenshots
+import dashboardUI from '../images/Dashboard_UI.jpeg';
+import pestDetectionUI from '../images/pest_detection_UI.jpeg';
+import cropAdvisoryUI from '../images/Crop_Advisory_UI.jpeg';
+
 const AppShowcase: React.FC = () => {
   return (
     <Section id="app-showcase" title="Field Intelligence in Your Pocket" subtitle="Designed for usability in the field, providing farmers with intuitive access to complex agronomic data." className="bg-slate-50">
@@ -36,7 +41,7 @@ const AppShowcase: React.FC = () => {
             <div className="rounded-[2rem] overflow-hidden w-full h-full bg-white relative">
               {/* REPLACE WITH YOUR DASHBOARD SCREENSHOT */}
               <img
-                src="/images/Dashboard_UI.jpeg"
+                src={dashboardUI}
                 alt="FarmAura Dashboard Interface"
                 className="w-full h-full object-cover"
               />
@@ -65,7 +70,7 @@ const AppShowcase: React.FC = () => {
             <div className="rounded-[2rem] overflow-hidden w-full h-full bg-white relative">
               {/* REPLACE WITH YOUR PEST DETECTION SCREENSHOT */}
               <img
-                src="/images/pest_detection_UI.jpeg"
+                src={pestDetectionUI}
                 alt="AI Pest Detection Interface"
                 className="w-full h-full object-cover"
               />
@@ -94,7 +99,7 @@ const AppShowcase: React.FC = () => {
             <div className="rounded-[2rem] overflow-hidden w-full h-full bg-white relative">
               {/* REPLACE WITH YOUR CROP ADVISORY SCREENSHOT */}
               <img
-                src="/images/Crop_Advisory_UI.jpeg"
+                src={cropAdvisoryUI}
                 alt="Crop Advisory Interface"
                 className="w-full h-full object-cover"
               />
