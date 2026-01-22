@@ -1,71 +1,45 @@
-import { getContainer } from './cosmosClient';
-
 export interface PilotEnquiry {
     fullName: string;
     organization: string;
     role: string;
     pilotObjectives: string;
     email: string;
-    submittedAt?: string;
 }
 
 /**
- * Save pilot enquiry DIRECTLY to Azure Cosmos DB
+ * Save pilot enquiry via the Vercel Serverless Function
+ * This bypasses CORS issues and keeps keys secure.
  */
 export async function savePilotEnquiry(enquiry: PilotEnquiry): Promise<{ success: boolean; error?: string; id?: string }> {
     try {
-        const container = await getContainer();
+        const response = await fetch('/api/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(enquiry),
+        });
 
-        // Add timestamp
-        const itemToSave = {
-            ...enquiry,
-            submittedAt: new Date().toISOString(),
-            type: 'pilot_enquiry'
-        };
+        const data = await response.json();
 
-        // Save to Cosmos DB
-        const { resource } = await container.items.create(itemToSave);
-
-        if (resource) {
-            console.log('✅ Pilot enquiry saved to Cosmos DB:', resource.id);
+        if (!response.ok) {
             return {
-                success: true,
-                id: resource.id
+                success: false,
+                error: data.error || 'Failed to save enquiry'
             };
         }
 
+        console.log('✅ Enquiry saved via Serverless Function:', data.id);
         return {
-            success: false,
-            error: 'Failed to create database record'
+            success: true,
+            id: data.id
         };
 
     } catch (error) {
-        console.error('❌ Cosmos DB Save Error:', error);
-
-        let errorMessage = 'Database connection error';
-        if (error instanceof Error) {
-            errorMessage = error.message;
-        }
-
+        console.error('❌ Fetch Error:', error);
         return {
             success: false,
-            error: errorMessage
+            error: error instanceof Error ? error.message : 'Network error'
         };
-    }
-}
-
-/**
- * Get all enquiries directly from Cosmos DB
- */
-export async function getAllEnquiries(): Promise<any[]> {
-    try {
-        const container = await getContainer();
-        const { resources } = await container.items
-            .query("SELECT * FROM c WHERE c.type = 'pilot_enquiry' ORDER BY c.submittedAt DESC")
-            .fetchAll();
-        return resources;
-    } catch (error) {
-        console.error('Error fetching enquiries:', error);
-        return [];
     }
 }
