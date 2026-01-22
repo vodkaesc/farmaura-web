@@ -33,20 +33,25 @@ const Contact: React.FC = () => {
 
     try {
       // 1. Save to Cosmos DB via backend API
-      const result = await savePilotEnquiry({
-        fullName: formData.fullName,
-        organization: formData.organization,
-        role: formData.role,
-        pilotObjectives: formData.pilotObjectives,
-        email: formData.email
-      });
-
-      if (!result.success) {
-        setError(result.error || 'Failed to submit enquiry. Please try again.');
-        return;
+      let databaseSaved = false;
+      try {
+        const result = await savePilotEnquiry({
+          fullName: formData.fullName,
+          organization: formData.organization,
+          role: formData.role,
+          pilotObjectives: formData.pilotObjectives,
+          email: formData.email
+        });
+        databaseSaved = result.success;
+        if (!result.success) {
+          console.warn('⚠️ Database save failed:', result.error);
+        }
+      } catch (dbErr) {
+        console.error('❌ Database save error:', dbErr);
       }
 
       // 2. Send email notification via EmailJS
+      // We always try to send the email, as this is the primary way to receive inquiries
       try {
         await emailjs.send(
           import.meta.env.VITE_EMAILJS_SERVICE_ID || '',

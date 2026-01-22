@@ -1,5 +1,11 @@
 // API configuration
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const isLocalhost = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+const API_BASE_URL = import.meta.env.VITE_API_URL || (isLocalhost ? 'http://localhost:3001' : '');
+
+/**
+ * Check if API is available before making requests
+ */
+const isApiConfigured = !!import.meta.env.VITE_API_URL || isLocalhost;
 
 export interface PilotEnquiry {
     fullName: string;
@@ -13,6 +19,11 @@ export interface PilotEnquiry {
  * Save pilot enquiry via backend API
  */
 export async function savePilotEnquiry(enquiry: PilotEnquiry): Promise<{ success: boolean; error?: string; id?: string }> {
+    if (!isApiConfigured) {
+        console.warn('⚠️ API is not configured for this environment. Skipping database save.');
+        return { success: false, error: 'API not configured' };
+    }
+
     try {
         const response = await fetch(`${API_BASE_URL}/api/pilot-enquiry`, {
             method: 'POST',
