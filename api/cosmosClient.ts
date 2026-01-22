@@ -1,7 +1,8 @@
 import { CosmosClient } from '@azure/cosmos';
 
 // Initialize Cosmos DB client
-const endpoint = import.meta.env.VITE_COSMOS_DB_URI;
+const rawEndpoint = import.meta.env.VITE_COSMOS_DB_URI || '';
+const endpoint = rawEndpoint.replace(':443/', '/').replace(':443', '');
 const key = import.meta.env.VITE_COSMOS_DB_KEY;
 
 if (!endpoint || !key) {
