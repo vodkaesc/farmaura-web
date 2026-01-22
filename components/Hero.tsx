@@ -120,13 +120,12 @@ const Hero: React.FC = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-            Intelligent Support for <br />
-            <span className="text-secondary italic">Climate Resilience</span>
+            Intelligent Crop Advisory for <br />
+            <span className="text-secondary italic">Precision Agriculture</span>
           </h1>
 
           <p className="text-lg md:text-xl text-slate-200 mb-8 leading-relaxed max-w-2xl">
-            Providing institutional stakeholders with high-resolution crop intelligence.
-            Designed to bridge the gap between satellite multispectral analysis and ground-level agricultural action.
+            Providing institutions and agricultural stakeholders with AI-driven crop advisories using field data, remote sensing, and agronomic insights—bridging digital intelligence with on-ground farm decisions.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">

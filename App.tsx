@@ -14,6 +14,7 @@ import TechStack from './components/TechStack';
 import Impact from './components/Impact';
 import Testimonials from './components/Testimonials';
 import Roadmap from './components/Roadmap';
+import Team from './components/Team';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -35,6 +36,7 @@ function App() {
       <Impact />
       <Testimonials />
       <Roadmap />
+      <Team />
       <Contact />
       <Footer />
     </div>
