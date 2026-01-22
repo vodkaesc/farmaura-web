@@ -7,6 +7,7 @@ import certificationImg from '../images/certifaction.jpg';
 import sihImg from '../images/sih.jpg';
 import reviewImg from '../images/review.jpg';
 import exhibitionImg from '../images/exibitiopn.jpg';
+import sihPdf from '../Smart India Hackathon-SIH-25030.pdf';
 
 const NationalAchievements: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -81,7 +82,7 @@ const NationalAchievements: React.FC = () => {
           <div className="space-y-4">
             <div
               className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 cursor-pointer hover:bg-primary/5 hover:border-primary/30 transition-all duration-300 group"
-              onClick={() => window.open('Smart India Hackathon-SIH-25030.pdf', '_blank')}
+              onClick={() => window.open(sihPdf, '_blank')}
             >
               <FileText size={20} className="text-primary" />
               <div className="flex-1">
