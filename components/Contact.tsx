@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
     setError(null);
 
     try {
-      // 1. Save to Cosmos DB via backend API
+      // 1. Save directly to Azure Cosmos DB
       let databaseSaved = false;
       try {
         const result = await savePilotEnquiry({
@@ -43,19 +43,15 @@ const Contact: React.FC = () => {
           email: formData.email
         });
         databaseSaved = result.success;
-        if (!result.success) {
-          console.warn('⚠️ Database save failed:', result.error);
-        }
       } catch (dbErr) {
         console.error('❌ Database save error:', dbErr);
       }
 
       // 2. Send email notification via EmailJS
-      // We always try to send the email, as this is the primary way to receive inquiries
       try {
         await emailjs.send(
-          import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
-          import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
           {
             to_email: 'Farmauraofc@gmail.com',
             from_name: formData.fullName,
@@ -65,7 +61,7 @@ const Contact: React.FC = () => {
             pilot_objectives: formData.pilotObjectives,
             submission_date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
           },
-          import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
         console.log('✅ Email notification sent successfully');
       } catch (emailError) {
