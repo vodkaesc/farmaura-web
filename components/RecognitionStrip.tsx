@@ -8,7 +8,7 @@ const RecognitionStrip: React.FC = () => {
         <div className="h-8 md:h-10 grayscale opacity-70 hover:opacity-100 transition-opacity duration-300">
           {/* REPLACE WITH ACTUAL SIH LOGO */}
           <img
-            src="images/SIH_LOGO.png"
+            src="/images/SIH_LOGO.png"
             alt="Smart India Hackathon Logo"
             className="h-full w-auto object-contain mix-blend-multiply"
           />

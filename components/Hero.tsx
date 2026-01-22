@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
     visible: {
       label: 'Visible Spectrum',
       color: 'bg-green-500',
-      img: 'images/farmer.jpg',
+      img: '/images/farmer.jpg',
       overlay: 'opacity-60',
       stats: {
         primary: { name: 'Canopy Coverage', value: '78%', color: 'bg-green-400', width: '78%' },

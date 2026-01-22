@@ -33,10 +33,10 @@ const NationalAchievements: React.FC = () => {
   ];
 
   const galleryImages = [
-    { url: "images/certifaction.jpg", caption: "Team receiving the Recognition Certificate at SIH Grand Finale" },
-    { url: "images/sih.jpg", caption: "National Merit Certificate - Smart India Hackathon" },
-    { url: "images/review.jpg", caption: "Technical presentation to the Ministry of Agriculture evaluators" },
-    { url: "images/exibitiopn.jpg", caption: "MVP demonstration during the national exhibition" }
+    { url: "/images/certifaction.jpg", caption: "Team receiving the Recognition Certificate at SIH Grand Finale" },
+    { url: "/images/sih.jpg", caption: "National Merit Certificate - Smart India Hackathon" },
+    { url: "/images/review.jpg", caption: "Technical presentation to the Ministry of Agriculture evaluators" },
+    { url: "/images/exibitiopn.jpg", caption: "MVP demonstration during the national exhibition" }
   ];
 
   return (

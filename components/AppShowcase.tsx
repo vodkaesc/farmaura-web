@@ -36,7 +36,7 @@ const AppShowcase: React.FC = () => {
             <div className="rounded-[2rem] overflow-hidden w-full h-full bg-white relative">
               {/* REPLACE WITH YOUR DASHBOARD SCREENSHOT */}
               <img
-                src="images/Dashboard_UI.jpeg"
+                src="/images/Dashboard_UI.jpeg"
                 alt="FarmAura Dashboard Interface"
                 className="w-full h-full object-cover"
               />
@@ -65,7 +65,7 @@ const AppShowcase: React.FC = () => {
             <div className="rounded-[2rem] overflow-hidden w-full h-full bg-white relative">
               {/* REPLACE WITH YOUR PEST DETECTION SCREENSHOT */}
               <img
-                src="images/pest_detection_UI.jpeg"
+                src="/images/pest_detection_UI.jpeg"
                 alt="AI Pest Detection Interface"
                 className="w-full h-full object-cover"
               />
@@ -94,7 +94,7 @@ const AppShowcase: React.FC = () => {
             <div className="rounded-[2rem] overflow-hidden w-full h-full bg-white relative">
               {/* REPLACE WITH YOUR CROP ADVISORY SCREENSHOT */}
               <img
-                src="images/Crop_Advisory_UI.jpeg"
+                src="/images/Crop_Advisory_UI.jpeg"
                 alt="Crop Advisory Interface"
                 className="w-full h-full object-cover"
               />
