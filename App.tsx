@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import RecognitionStrip from './components/RecognitionStrip';
 import NationalAchievements from './components/NationalAchievements';
+import Achievements from './components/Achievements';
 import About from './components/About';
 import Process from './components/Process';
 import Benefits from './components/Benefits';
@@ -25,6 +26,7 @@ function App() {
       <Hero />
       <RecognitionStrip />
       <NationalAchievements />
+      <Achievements />
       <About />
       <Process />
       <Benefits />
